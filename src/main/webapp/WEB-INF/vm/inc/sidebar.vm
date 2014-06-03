@@ -1,4 +1,4 @@
-<div id="sidebar" class="sidebar">
+<div id="sidebar" class="sidebar sidebar-fixed">
     <ul class="nav nav-list">
         <li class="active">
             <a href="#">
