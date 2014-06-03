@@ -11,13 +11,13 @@
     </head>
 
     <body class="no-skin">
-        #include('inc/navbar.vm')
+        #parse('inc/navbar.vm')
 
         <div class="main-container" id="main-container">
-            #include('inc/sidebar.vm')
+            #parse('inc/sidebar.vm')
 
             <div class="main-content">
-                #include('inc/breadcrumb.vm')
+                #parse('inc/breadcrumb.vm')
 
                 <div class="page-content">
                     <div class="page-header">
