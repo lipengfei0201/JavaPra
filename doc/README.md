@@ -11,3 +11,4 @@
 ## 对某个环境数据库执行脚本
 
     ./login-db.sh < schema/0_init.sql
+    ./login-db.sh beta.conf < schema/0_init.sql

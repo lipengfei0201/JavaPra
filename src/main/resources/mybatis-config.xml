@@ -24,7 +24,9 @@
     </plugins>
 
     <mappers>
+        <!-- 
         <mapper resource="mapper/account.xml" />
+         -->
     </mappers>
 
 </configuration>
