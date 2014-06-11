@@ -1,3 +1,5 @@
+ace.settings.check('sidebar' , 'collapsed')
+    
 function message(text) {
 	$("#g-message").removeClass().addClass("alert alert-block alert-success").text(text).show(100);
 	$("#g-message").click(function() {
