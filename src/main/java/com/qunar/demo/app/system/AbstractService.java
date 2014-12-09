@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public abstract class AbstractService {
 
@@ -12,4 +13,7 @@ public abstract class AbstractService {
 
     @Resource
     protected SqlSession sqlSession;
+
+    @Resource
+    protected JdbcTemplate jdbcTemplate;
 }

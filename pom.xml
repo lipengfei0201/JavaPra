@@ -10,7 +10,7 @@
     <properties>
         <maven_deploy_skip>true</maven_deploy_skip>
         <org.springframework.version>3.2.8.RELEASE</org.springframework.version>
-        <qunar.common.version>8.1.6</qunar.common.version>
+        <qunar.common.version>8.1.14</qunar.common.version>
     </properties>
 
     <parent>
@@ -31,11 +31,6 @@
             <artifactId>meerkat-mybatis</artifactId>
             <version>2.2.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.qunar.base</groupId>
-            <artifactId>meerkat-web</artifactId>
-            <version>2.2.3</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -43,11 +38,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
+            <artifactId>spring-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
 
         <dependency>
@@ -66,11 +61,16 @@
         </dependency>
 
         <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
         </dependency>
 
-        <!--myql -->
+        <!--mysql -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
@@ -90,6 +90,7 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
+        <!-- test -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit-dep</artifactId>
@@ -102,7 +103,6 @@
     </dependencies>
 
     <build>
-        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -119,5 +119,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

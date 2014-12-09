@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
 
-import qunar.web.security.AuthorizationController;
-import qunar.web.security.SecurityManager;
+import qunar.web.security.AuthorizationControl;
+import qunar.web.security.LoginManager;
 
 @Service
-public class AuthorizationControl implements AuthorizationController {
+public class AccessControl implements AuthorizationControl {
 
     @Resource
-    private SecurityManager securityManager;
+    private LoginManager<String> loginManager;
 
     // TODO user manager system
     @SuppressWarnings("serial")
@@ -28,7 +28,7 @@ public class AuthorizationControl implements AuthorizationController {
     };
 
     @Override
-    public boolean isCheckRequired(ServletRequest _request) {
+    public boolean isCheckRequired(HttpServletRequest _request) {
 
         String uri = uriOf((HttpServletRequest) _request);
 
@@ -42,14 +42,14 @@ public class AuthorizationControl implements AuthorizationController {
     }
 
     @Override
-    public boolean isAuthorized(ServletRequest request) {
+    public boolean isAuthorized(HttpServletRequest request) {
 
-        if (!securityManager.isLogin((HttpServletRequest) request)) {
+        if (!loginManager.isLogin((HttpServletRequest) request)) {
             // not login
             return false;
         }
 
-        String loginId = securityManager.currentLoginId((HttpServletRequest) request);
+        String loginId = loginManager.current(request);
         String uri = uriOf((HttpServletRequest) request);
         // TODO check account_uri privileges
 
