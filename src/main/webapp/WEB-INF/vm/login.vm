@@ -1,0 +1,19 @@
+#set($layout="layout/blank.vm")
+
+<div class="main-container">
+    <div class="row" style="padding-top:13%;">
+        <div class="center">
+            <h2>
+                <span class="blue">xxx系统</span>
+            </h2>
+        </div>
+        <div class="center">
+            <button id="qsso-login" class="btn btn-sm btn-primary">
+                登陆
+            </button>
+        </div> 
+    </div>
+</div>
+
+<script src="https://qsso.corp.qunar.com/lib/qsso-auth.js?t=<?=rand()?>"></script>
+<script>QSSO.attach('qsso-login','login.htm');</script>

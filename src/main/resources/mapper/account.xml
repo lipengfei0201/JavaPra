@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="account">
+
+    <select id="select"
+            parameterType="map"
+            resultType="account">
+        <![CDATA[
+            select
+                id,
+                name,
+                create_time as createTime
+            from
+                account
+        ]]>
+        <where>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectCount"
+            parameterType="map"
+            resultType="java.lang.Integer">
+        <![CDATA[
+            select
+                count(*)
+            from
+                account
+        ]]>
+        <where>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert"
+            parameterType="account"
+            keyProperty="id">
+        <![CDATA[
+            insert into account (
+                name
+            ) values (
+                #{name}
+            )
+            ]]>
+    </insert>
+
+    <update id="update"
+            parameterType="account">
+            update account
+            <set>
+                <if test="createTime != null">
+                    create_time=#{createTime},
+                </if>
+           </set>
+           where name=#{name}
+    </update>
+</mapper>
